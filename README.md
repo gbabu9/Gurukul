@@ -15,7 +15,7 @@ Official website of **Derozio Children's Academy** – English Medium Co-ed CBSE
 
 #### 2. Create a New Repository
 1. Click the **+** icon (top right) → **New repository**
-2. Repository name: `derozio-childrens-academy` (or any name you like)
+2. Repository name: `Gurukul`
 3. Make it **Public**
 4. **Do NOT** check “Add a README file”
 5. Click **Create repository**
@@ -40,12 +40,12 @@ Official website of **Derozio Children's Academy** – English Medium Co-ed CBSE
 - Your website will be available at:
 
 ```
-https://YOUR-USERNAME.github.io/derozio-childrens-academy/
+https://YOUR-USERNAME.github.io/Gurukul/
 ```
 
 Example:  
 If your GitHub username is `derozioacademy`, the link will be:  
-`https://derozioacademy.github.io/derozio-childrens-academy/`
+`https://derozioacademy.github.io/Gurukul/`
 
 ---
 

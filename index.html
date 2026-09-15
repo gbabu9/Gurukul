@@ -66,16 +66,14 @@
             gap: 12px;
         }
         .logo-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            color: var(--primary);
-            font-size: 1.1rem;
+            width: 58px;
+            height: 58px;
+            flex-shrink: 0;
+        }
+        .logo-icon svg {
+            width: 100%;
+            height: 100%;
+            display: block;
         }
         .logo-text h1 {
             font-size: 1.4rem;
@@ -594,7 +592,25 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    <div class="logo-icon">DCA</div>
+                    <div class="logo-icon">
+                        <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                            <!-- Outer circle -->
+                            <circle cx="50" cy="50" r="48" fill="#f9ca24" stroke="#e1b12c" stroke-width="2"/>
+                            <!-- Inner decorative ring -->
+                            <circle cx="50" cy="50" r="42" fill="none" stroke="#0a3d62" stroke-width="1.5" opacity="0.3"/>
+                            <!-- Diya base -->
+                            <ellipse cx="50" cy="68" rx="22" ry="8" fill="#0a3d62"/>
+                            <path d="M28 68 Q28 58 50 55 Q72 58 72 68" fill="#0a3d62"/>
+                            <!-- Diya bowl -->
+                            <ellipse cx="50" cy="58" rx="18" ry="6" fill="#1a5276"/>
+                            <!-- Flame -->
+                            <path d="M50 52 Q42 40 46 28 Q50 35 54 28 Q58 40 50 52" fill="#e74c3c"/>
+                            <path d="M50 50 Q45 40 48 32 Q50 36 52 32 Q55 40 50 50" fill="#f39c12"/>
+                            <path d="M50 48 Q48 42 50 36 Q52 42 50 48" fill="#f9ca24"/>
+                            <!-- DCA text -->
+                            <text x="50" y="22" text-anchor="middle" font-family="Arial, sans-serif" font-weight="bold" font-size="14" fill="#0a3d62">DCA</text>
+                        </svg>
+                    </div>
                     <div class="logo-text">
                         <h1>Derozio Children's Academy</h1>
                         <span>Founded 2015 • Kolkata</span>
