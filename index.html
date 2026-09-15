@@ -203,14 +203,96 @@
             background: white;
             color: var(--text);
             border-radius: 20px;
-            padding: 35px;
+            padding: 20px;
             box-shadow: var(--shadow);
+            overflow: hidden;
         }
         .hero-card h3 {
             color: var(--primary);
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.4rem;
+            margin: 15px 0 12px;
             text-align: center;
+        }
+        .school-photo-frame {
+            position: relative;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(10, 61, 98, 0.25);
+            margin-bottom: 8px;
+            background: #0a3d62;
+        }
+        .school-photo-frame img {
+            width: 100%;
+            height: 210px;
+            object-fit: cover;
+            display: block;
+            filter: contrast(1.08) saturate(1.15) brightness(1.05);
+            transition: transform 0.5s ease, filter 0.4s ease;
+        }
+        .school-photo-frame:hover img {
+            transform: scale(1.06);
+            filter: contrast(1.12) saturate(1.2) brightness(1.08);
+        }
+        /* Modern gradient overlay for fresh look */
+        .school-photo-frame::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(
+                180deg, 
+                rgba(10,61,98,0.15) 0%, 
+                transparent 40%,
+                rgba(10,61,98,0.45) 100%
+            );
+            z-index: 1;
+            pointer-events: none;
+        }
+        /* Modern accent border */
+        .school-photo-frame::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 16px;
+            border: 3px solid transparent;
+            background: linear-gradient(135deg, #f9ca24, #e1b12c, #0a3d62) border-box;
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) padding-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: destination-out;
+            mask-composite: exclude;
+            pointer-events: none;
+            z-index: 2;
+        }
+        .photo-badge {
+            position: absolute;
+            bottom: 12px;
+            left: 12px;
+            right: 12px;
+            z-index: 3;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .photo-badge span {
+            background: rgba(255,255,255,0.95);
+            color: #0a3d62;
+            font-size: 0.72rem;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+        }
+        .photo-badge .year-badge {
+            background: #f9ca24;
+            color: #0a3d62;
+        }
+        .photo-caption {
+            text-align: center;
+            font-size: 0.8rem;
+            color: #555;
+            margin-top: 10px;
+            font-weight: 500;
+            letter-spacing: 0.3px;
         }
         .info-item {
             display: flex;
@@ -294,32 +376,72 @@
         .quote-box {
             background: var(--primary);
             color: white;
-            padding: 35px;
+            padding: 0;
             border-radius: 16px;
             position: relative;
+            overflow: hidden;
+            box-shadow: 0 12px 40px rgba(10, 61, 98, 0.3);
         }
-        .quote-box::before {
-            content: '"';
-            font-size: 5rem;
+        .banner-photo-frame {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        .banner-photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top center;
+            filter: contrast(1.1) saturate(1.2) brightness(1.05);
+            transition: transform 0.5s ease;
+        }
+        .quote-box:hover .banner-photo-frame img {
+            transform: scale(1.05);
+        }
+        .banner-photo-frame::after {
+            content: '';
             position: absolute;
-            top: 10px;
-            left: 20px;
-            opacity: 0.2;
-            font-family: Georgia, serif;
+            inset: 0;
+            background: linear-gradient(
+                180deg,
+                transparent 30%,
+                rgba(10,61,98,0.85) 100%
+            );
         }
-        .quote-box p {
-            font-size: 1.25rem;
+        .quote-content {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 25px 28px;
+            z-index: 2;
+            color: white;
+        }
+        .quote-content p {
+            font-size: 1.15rem;
             font-style: italic;
             line-height: 1.5;
-            position: relative;
-            z-index: 1;
+            margin-bottom: 8px;
         }
-        .quote-box span {
+        .quote-content span {
             display: block;
-            margin-top: 15px;
-            font-size: 0.9rem;
-            opacity: 0.8;
+            font-size: 0.85rem;
+            opacity: 0.9;
             font-style: normal;
+            font-weight: 500;
+        }
+        .banner-tag {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: #f9ca24;
+            color: #0a3d62;
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 6px 14px;
+            border-radius: 20px;
+            z-index: 3;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.2);
         }
 
         /* Inspirational Quotes */
@@ -648,6 +770,14 @@
                     </div>
                 </div>
                 <div class="hero-card">
+                    <div class="school-photo-frame">
+                        <img src="school-building.jpg" alt="Derozio Children's Academy Building">
+                        <div class="photo-badge">
+                            <span>Derozio Children's Academy</span>
+                            <span class="year-badge">Est. 2015</span>
+                        </div>
+                    </div>
+                    <p class="photo-caption">Modern Campus • Kheyadaha, Sonarpur</p>
                     <h3>School Information</h3>
                     <div class="info-item">
                         <span>📍</span>
@@ -723,8 +853,14 @@
                     </div>
                 </div>
                 <div class="quote-box">
-                    <p>Education is the most powerful weapon for changing the world.</p>
-                    <span>— Our Guiding Philosophy</span>
+                    <div class="banner-photo-frame">
+                        <img src="school-banner.jpg" alt="Derozio Children's Academy Banner">
+                        <div class="banner-tag">ADMISSIONS OPEN</div>
+                        <div class="quote-content">
+                            <p>"Education is the most powerful weapon for changing the world."</p>
+                            <span>— Our Guiding Philosophy</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
